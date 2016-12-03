@@ -52,8 +52,13 @@ function selected($value) {
 <input type="submit" value="submit form" />
 </span>
 
+<<<<<<< HEAD
 <i>click &quot;apply plugin&quot; to install plugin at the &lt;select&gt;</i><br />
 <i>submit form to see, what really comes to server</i>
+=======
+<i>click <b>&quot;apply plugin&quot;</b> to install plugin at the &lt;select&gt;</i><br />
+<i>submit form to see, what is really comes to server</i>
+>>>>>>> 1c2171fb289550ad9df6f9c3d6185744e8f1f3ab
 
 </form>
 </body>
