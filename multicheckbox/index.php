@@ -15,7 +15,7 @@
 		}
 	</style>
 	<link rel="stylesheet" href="jquery.multicheckbox.css" type="text/css" />
-	<script src="jquery.js" type="text/javascript"></script>
+	<script src="../jquery.js" type="text/javascript"></script>
 	<script src="jquery.multicheckbox.js" type="text/javascript"></script>
 </head>
 
