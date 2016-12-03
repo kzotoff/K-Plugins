@@ -1,7 +1,9 @@
 /**
  * Plugin for converting <select multiple> to set of labeled checkbox with filtering
  *
- *
+ * @author k.zotov@gmail.com
+ * @version 1.0
+ * @date 2016/11/25
  */
 (function($) {
 
@@ -13,7 +15,10 @@
 		}, customOptions);
 
 		/**
-		 * Filtering
+		 * Filtering the contents
+		 *
+		 * @param jQuery container external container to update
+		 * @return void
 		 */
 		var applyFilter = function(container) {
 			var filterString = container.find('.multicheckbox-filter-input').val();
@@ -28,6 +33,9 @@
 
 		/**
 		 * Total/checked/visible counters
+		 *
+		 * @param jQuery container external container to update
+		 * @return void
 		 */
 		var updateCounters = function(container) {
 
@@ -54,8 +62,6 @@
 			container.find('.multicheckbox-counter-total').html(countTotal);
 		};
 
-
-
 		return this.each(function() {
 
 			var $source = $(this);
@@ -64,9 +70,9 @@
 				<div class="multicheckbox"> \
 					<div class="multicheckbox-helper"> \
 						<div class="multicheckbox-counters"> \
-							<span class="multicheckbox-counter-checked">1</span> \
-							<span class="multicheckbox-counter-visible">2</span> \
-							<span class="multicheckbox-counter-total">3</span> \
+							<span class="multicheckbox-counter-checked">-</span> \
+							<span class="multicheckbox-counter-visible">-</span> \
+							<span class="multicheckbox-counter-total">-</span> \
 						</div> \
 						<input class="multicheckbox-filter-input" type="text" placeholder="type to filter..." /> \
 					</div> \
@@ -102,6 +108,7 @@
 				} else {
 					$realElement.removeAttribute('selected');
 				}
+				$source.change();
 				updateCounters($container);
 			});
 
@@ -109,6 +116,9 @@
 			$container.css('width', $source.outerWidth() + 'px');
 			$container.css('height', $source.outerHeight() + 'px');
 			$source.css('display', 'none');
+			
+			// update data immediately
+			updateCounters($container);
 
 		});
 	}
