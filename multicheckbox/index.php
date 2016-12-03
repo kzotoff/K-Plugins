@@ -24,7 +24,7 @@
 <?php
 
 if (count($_POST) > 0) {
-	echo '<pre>INCOMING POST DATA: '.print_r($_POST, 1).'</pre>';
+	echo '<pre>POST DATA: '.print_r($_POST, 1).'</pre>';
 }
 
 function selected($value) {
@@ -54,7 +54,6 @@ function selected($value) {
 
 <i>click <b>&quot;apply plugin&quot;</b> to install plugin at the &lt;select&gt;</i><br />
 <i>submit form to see, what really comes to server</i>
-<i>WOW branch test_1</i>
 
 </form>
 </body>
