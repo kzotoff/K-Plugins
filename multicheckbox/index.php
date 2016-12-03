@@ -21,16 +21,30 @@
 
 
 <body>
+<?php
 
-<form action="accept.php" method="post">
+if (count($_POST) > 0) {
+	echo '<pre>POST DATA: '.print_r($_POST, 1).'</pre>';
+}
+
+function selected($value) {
+	if (isset($_POST['selector']) && in_array($value, $_POST['selector'])) {
+		echo ' selected="selected"';
+	}
+}
+
+?>
+<br />
+
+<form action="index.php" method="post">
 <select name="selector[]" multiple="multiple" style="width: 300px; height: 200px;">
-	<option value="1">some cool value 1</option>
-	<option value="2">some cool value 2</option>
-	<option value="3" selected="selected">some cool value 3</option>
-	<option value="4">some cool value 4</option>
-	<option value="5">some cool value 5</option>
-	<option value="6" selected="selected">some cool value 6</option>
-	<option value="7">some cool value 7</option>
+	<option value="1"<?php selected(1); ?>>some cool value 1</option>
+	<option value="2"<?php selected(2); ?>>some cool value 2</option>
+	<option value="3"<?php selected(3); ?>>some cool value 3</option>
+	<option value="4"<?php selected(4); ?>>some cool value 4</option>
+	<option value="5"<?php selected(5); ?>>some cool value 5</option>
+	<option value="6"<?php selected(6); ?>>some cool value 6</option>
+	<option value="7"<?php selected(7); ?>>some cool value 7</option>
 </select>
 
 <span class="buttons">
