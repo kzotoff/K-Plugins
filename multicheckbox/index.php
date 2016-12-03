@@ -24,7 +24,7 @@
 <?php
 
 if (count($_POST) > 0) {
-	echo '<pre>POST DATA: '.print_r($_POST, 1).'</pre>';
+	echo '<pre>INCOMING POST DATA: '.print_r($_POST, 1).'</pre>';
 }
 
 function selected($value) {
